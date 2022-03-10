@@ -8,6 +8,9 @@
 # 数据类型和变量
 print(100)
 print(100 + 200)
+print(100_1000_1000_1000)
+print(123000000000000000)
+print(1.2e10)
 print('I\'m \"ok"!')
 print('https://www.baidu.com')
 print('line','line2','line3')
@@ -27,6 +30,7 @@ print(10 / 3)
 print("包含中文的str")
 print(ord('A')) # 获取字符的整数表示
 print(chr(66)) # 转换成对应的字符
+print('\u4e2d\u6587')
 print(b'ABC') #若是在网络上传输或者保存到磁盘上，需要把str变为以字节为单位的bytes
 print('ABC'.encode('ascii')) #通过encode编码为ascii的bytes
 # 编码只能从范围高的到低的，不能超出范围，如中文的str不能用ascii编码

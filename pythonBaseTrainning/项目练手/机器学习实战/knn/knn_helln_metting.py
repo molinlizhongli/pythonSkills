@@ -23,16 +23,21 @@ Modify:
 """
 
 def classifyO(inx, dataset, labels, k):
+    #求距离（简单方法、复杂方法）
+    # 复杂方法
     # numpy函数shape[0]返回dataSet的行数
-    dataSetSize = dataset.shape[0]
-    # 在列向量方向上重复inX共1次(横向),行向量方向上重复inX共dataSetSize次(纵向)
-    diffMat = np.tile(inx, (dataSetSize, 1)) -dataset
-    # 二维特征相减后平方
-    sqDiffMat = diffMat**2
-    # sum()所有元素相加,sum(0)列相加,sum(1)行相加
-    sqDistances = sqDiffMat.sum(axis=1)
+    # dataSetSize = dataset.shape[0]
+    # # 在列向量方向上重复inX共1次(横向),行向量方向上重复inX共dataSetSize次(纵向)
+    # diffMat = np.tile(inx, (dataSetSize, 1)) -dataset
+    # # 二维特征相减后平方
+    # sqDiffMat = diffMat**2
+    # # sum()所有元素相加,sum(0)列相加,sum(1)行相加
+    # sqDistances = sqDiffMat.sum(axis=1)
     # 开方,计算出距离
-    distances = sqDistances**0.5
+    # distances = sqDistances**0.5
+
+    # 简单方法
+    distances = np.sum((inx - dataset)**2,axis=1)**0.5
     # 返回distances中元素从小到大排序后的索引值
     sortedDistances = distances.argsort()
     # 定一个记录类别次数的字典
